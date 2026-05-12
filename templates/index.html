@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Real-Time Sign Language Translator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Sign language translator</h1>
+    <p class="sub">MediaPipe hands · TensorFlow classifier · geometric fallback · ASL / ISL labels</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label><input type="radio" name="lang" value="asl" checked /> ASL labels</label>
+      <label><input type="radio" name="lang" value="isl" /> ISL labels</label>
+    </section>
+
+    <div class="video-wrap">
+      <img id="feed" src="{{ url_for('video_feed', lang='asl') }}" alt="Camera feed" />
+    </div>
+
+    <aside class="tips" aria-label="Usage tips">
+      <h2>Tips for best results</h2>
+      <ul>
+        <li>Use a <strong>plain background</strong> and <strong>good lighting</strong> (avoid strong backlight).</li>
+        <li>Hold <strong>static letter shapes</strong>: A, B, C, I, L, V, Y, and <strong>open palm</strong>.</li>
+        <li>
+          <strong>First launch</strong> may train the model for a short time if
+          <code>models/sign_classifier.keras</code> is missing.
+        </li>
+      </ul>
+    </aside>
+  </main>
+
+  <script>
+    const feed = document.getElementById("feed");
+    document.querySelectorAll('input[name="lang"]').forEach((el) => {
+      el.addEventListener("change", () => {
+        const lang = document.querySelector('input[name="lang"]:checked').value;
+        feed.src = "{{ url_for('video_feed') }}?lang=" + lang + "&t=" + Date.now();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0f1419;
+  color: #e8eaed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+.sub {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9aa0a6;
+}
+main {
+  width: 100%;
+  max-width: 720px;
+}
+.controls {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
+.controls label {
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.video-wrap {
+  background: #1a2332;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+}
+#feed {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.tips {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background: #f0f2f5;
+  color: #1a1d21;
+  border: 1px solid #d8dde3;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+.tips h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111418;
+}
+.tips ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.tips li {
+  margin-bottom: 0.35rem;
+}
+.tips li:last-child {
+  margin-bottom: 0;
+}
+.tips code {
+  background: #e2e6eb;
+  color: #111418;
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+code {
+  background: #1a2332;
+  color: #e8eaed;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.82em;
+}
